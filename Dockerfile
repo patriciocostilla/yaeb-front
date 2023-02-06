@@ -1,5 +1,7 @@
 FROM node:18.12.1
 
+ARG ANGULAR_ENV=development
+
 USER node:node
 
 WORKDIR /app
@@ -10,6 +12,6 @@ RUN npm install
 
 COPY --chown=node:node . .
 
-RUN npm run build
+RUN npm run build -- configuration=$ANGULAR_ENV
 
 CMD npm start
