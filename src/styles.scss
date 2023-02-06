@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+.flx-v {
+    display: flex;
+    flex-direction: column;
+}
+
+.flx-h {
+    display: flex;
+    flex-direction: row;
+}
+
+.flx-justify-center {
+    justify-content: center;
+}
+
+.flx-justify-between {
+    justify-content: space-between;
+}
+
+.flx-align-center {
+    align-items: center;
+}
+
+.flx-align-stretch {
+    align-items: stretch;
+}
+
+.pd-6 {
+    padding: 6px;
+}
+
+.mr-6 {
+    margin-right: 6px;
+}
+
+.mt-24 {
+    margin-top: 24px;
+}
+
+.button {
+    &:hover {
+        cursor: pointer;
+    }
+    ::selection {
+        background: none;
+    }
+}
+
+body {
+    background: rgb(210,174,238);
+    background: radial-gradient(circle, rgba(210,174,238,1) 0%, rgba(148,187,233,1) 100%);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+}

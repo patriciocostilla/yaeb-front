@@ -1,0 +1,34 @@
+.info-container {
+    border: 1px solid rgba($color: #fff, $alpha: 0.5);
+    border-radius: 5px;
+    width: 30%;
+    background-color: rgba($color: #fff, $alpha: 0.25);
+    .info-row {
+        &:hover {
+            background-color: rgba($color: #fff, $alpha: 0.25);
+        }
+        .info-txt {
+            font-size: 14px;
+            text-align: end;
+        }
+    }
+}
+
+@mixin white-shadow {
+    color: white;
+    text-shadow: gray 0 0 15px;
+}
+
+.title {
+    @include white-shadow();
+    font-size: larger;
+}
+
+.timestamp {
+    @include white-shadow();
+    font-size: medium;
+}
+
+.container {
+    width: 100%;
+}
