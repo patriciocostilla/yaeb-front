@@ -1,0 +1,20 @@
+name: Build and Deploy the app
+run-name: ${{ github.actor }}
+on: 
+  push:
+    branches:
+      - main
+      - dev
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v2.3.4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.12.1
+      - run: npm ci
+      - if: ${{ github.ref == 'refs/heads/main' }}
+        run: npm run build -- --configuration=production
+      - if: ${{ github.ref != 'refs/heads/main' }}
+        run: npm run build -- --configuration=development
