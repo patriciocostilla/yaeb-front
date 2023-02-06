@@ -12,6 +12,6 @@ RUN npm install
 
 COPY --chown=node:node . .
 
-RUN npm run build -- configuration=$ANGULAR_ENV
+RUN npm run build -- --configuration=$ANGULAR_ENV
 
 CMD npm start
