@@ -1,3 +1,3 @@
 export const environment = {
-    API_URL: 'http://api.dev.yaeb.local.io'
+    API_URL: 'http://api.yaeb.dev.local.io'
 };
