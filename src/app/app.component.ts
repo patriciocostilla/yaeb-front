@@ -46,7 +46,7 @@ export class AppComponent {
 
     this.urlArray.push(['angularLocation.path()', this.location.path()]);
     this.urlArray.push([
-      'angularLocation.prepareExternalUrl()',
+      'angularLocation.prepareExternalUrl(\'\')',
       this.location.prepareExternalUrl(''),
     ]);
     this.urlArray.push([
