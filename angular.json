@@ -57,7 +57,6 @@
               ]
             },
             "development": {
-              "baseHref": "/base/",
               "buildOptimizer": false,
               "optimization": false,
               "vendorChunk": true,

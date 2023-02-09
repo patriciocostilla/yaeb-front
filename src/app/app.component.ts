@@ -17,6 +17,7 @@ export class AppComponent {
   urlArray: [string, unknown][] = [
     ['window.location.host', window.location.host],
     ['window.location.href', window.location.href],
+    ['window.location.protocol', window.location.protocol]
   ];
 
   apiUrl = env.API_URL;
@@ -53,6 +54,8 @@ export class AppComponent {
       "angularLocation.prepareExternalUrl('v2')",
       this.location.prepareExternalUrl('v2'),
     ]);
+    let redirectUrl = `${window.location.protocol}//${window.location.host}${this.location.prepareExternalUrl('v2/login')}`
+    this.urlArray.push(['Redirect URL', redirectUrl])
   }
 
   refresh() {
