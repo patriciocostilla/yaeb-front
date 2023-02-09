@@ -15,9 +15,9 @@ jobs:
           node-version: 18.12.1
       - run: npm ci
       - if: github.ref == 'refs/heads/main'
-        run: npm run build -- --configuration=production
+        run: npm run build -- --configuration=production --base-href=/prod/
       - if: github.ref != 'refs/heads/main'
-        run: npm run build -- --configuration=development
+        run: npm run build -- --configuration=development --base-href=/dev/
   publish:
     needs: [build]
     runs-on: ubuntu-22.04
