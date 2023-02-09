@@ -15,8 +15,8 @@ export class AppComponent {
   info = new BehaviorSubject<any>({});
   infoArray: [string, unknown][] = [];
   urlArray: [string, unknown][] = [
-    ['location.host', window.location.host],
-    ['location.href', window.location.href],
+    ['window.location.host', window.location.host],
+    ['window.location.href', window.location.href],
   ];
 
   apiUrl = env.API_URL;
