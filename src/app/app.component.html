@@ -22,6 +22,14 @@
         <span class="material-symbols-outlined"> refresh </span>
       </div>
     </div>
+    <div class="mt-12 flx-h info-container" >
+        <div class="info-row pd-6 button w-100 center" (click)="pause()" *ngIf="this.intervalStatus === 'set'">
+          <span class="material-symbols-outlined"> pause </span>
+        </div>
+        <div class="info-row pd-6 button w-100 center" (click)="continue()" *ngIf="this.intervalStatus === 'clear'">
+          <span class="material-symbols-outlined"> sound_sampler </span>
+        </div>
+    </div>
     <div class="mt-24 timestamp" *ngIf="refreshedAt !== null">
       {{ refreshedAt.toLocaleString("es-ES") }}
     </div>

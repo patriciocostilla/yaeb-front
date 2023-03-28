@@ -17,19 +17,20 @@ export class AppComponent {
 
   apiUrl = env.API_URL;
   refreshedAt: Date | null = null;
+  interval: any;
+  intervalStatus: 'set' | 'clear' = 'clear'
 
   constructor(
     private http: HttpClient,
     private title: Title,
     private router: Router,
-    private location: Location
   ) {
     this.info.subscribe((newInfo) => {
       this.infoArray = Object.entries(newInfo);
     });
 
     this.refresh();
-    setInterval(() => this.refresh(), 5000);
+    this.continue();
 
     if (isDevMode()) {
       this.router.events.subscribe((event) => {
@@ -46,5 +47,19 @@ export class AppComponent {
       this.info.next(data);
       this.refreshedAt = new Date();
     });
+  }
+
+  pause() {
+    if (this.intervalStatus === 'set') {
+      clearInterval(this.interval)
+      this.intervalStatus = 'clear'
+    }
+  }
+
+  continue() {
+    if (this.intervalStatus === 'clear') {
+      this.interval = setInterval(() => this.refresh(), 5000);
+      this.intervalStatus = 'set';
+    }
   }
 }
