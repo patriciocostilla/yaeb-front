@@ -25,18 +25,8 @@
     <div class="mt-24 timestamp" *ngIf="refreshedAt !== null">
       {{ refreshedAt.toLocaleString("es-ES") }}
     </div>
-    <div class="flx-h flx-justify-center container mt-24">
-      <div class="flx-v flx-align-stretch info-container">
-        <div
-          class="flx-h pd-6 flx-justify-between flx-align-center info-row"
-          *ngFor="let entry of urlArray"
-        >
-          <div class="mr-6">
-            <strong>{{ entry[0] }}</strong>
-          </div>
-          <div class="info-txt">{{ entry[1] }}</div>
-        </div>
-      </div>
+    <div class="w-30">
+      <app-form-component></app-form-component>
     </div>
   </ng-container>
 </div>

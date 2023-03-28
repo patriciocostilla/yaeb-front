@@ -1,0 +1,28 @@
+.text-input {
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: rgba($color: #fff, $alpha: 0.25);
+    padding: 6px;
+    font-size: 18px;
+    font-family: monospace;
+}
+
+.label {
+    color: white;
+    text-shadow: gray 0 0 15px;
+}
+
+.button {
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 6px;
+    background-color: rgba($color: #fff, $alpha: 0.10);
+    color: white
+}
+
+.result {
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 6px;
+    background-color: rgba($color: #fff, $alpha: 0.10);
+}

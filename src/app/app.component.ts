@@ -14,11 +14,6 @@ import { environment as env } from '../environments/environment';
 export class AppComponent {
   info = new BehaviorSubject<any>({});
   infoArray: [string, unknown][] = [];
-  urlArray: [string, unknown][] = [
-    ['window.location.host', window.location.host],
-    ['window.location.href', window.location.href],
-    ['window.location.protocol', window.location.protocol]
-  ];
 
   apiUrl = env.API_URL;
   refreshedAt: Date | null = null;
@@ -44,18 +39,6 @@ export class AppComponent {
         }
       });
     }
-
-    this.urlArray.push(['angularLocation.path()', this.location.path()]);
-    this.urlArray.push([
-      'angularLocation.prepareExternalUrl(\'\')',
-      this.location.prepareExternalUrl(''),
-    ]);
-    this.urlArray.push([
-      "angularLocation.prepareExternalUrl('v2')",
-      this.location.prepareExternalUrl('v2'),
-    ]);
-    let redirectUrl = `${window.location.protocol}//${window.location.host}${this.location.prepareExternalUrl('v2/login')}`
-    this.urlArray.push(['Redirect URL', redirectUrl])
   }
 
   refresh() {

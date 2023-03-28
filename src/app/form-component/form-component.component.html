@@ -1,0 +1,11 @@
+<form class="flx-v">
+    <label for="input" class="label">Input:</label>
+    <input id="name" type="text" [formControl]="input" class="text-input" autocomplete="off">
+</form>
+<span class="label">{{ displayValue }}</span>
+<div style="text-align: right;">
+    <button class="mt-12 button" (click)="submit()">Submit</button>
+</div>
+<div class="mt-12 result" *ngIf="result">
+    {{ result | json}}
+</div>
